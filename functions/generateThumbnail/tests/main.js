@@ -13,7 +13,6 @@ const main = async() => {
   // Download video from Cloud Storage to a temporary local file
   // await inputBucket.file('').download({ destination: tempLocalFile });
 
-
   new ffmpeg('/Applications/Divyanshu Parihar/typescript-projects/paid-videos/functions/generateThumbnail/demo.mov')
   .takeScreenshots({
     count: 1,

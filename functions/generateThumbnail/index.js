@@ -27,23 +27,6 @@ functions.cloudEvent('helloGCS', async cloudEvent => {
 
   // Download video from Cloud Storage to a temporary local file
   await inputBucket.file(fileName).download({ destination: tempLocalFile });
-
-  // Generate a thumbnail using ffmpeg (example)
-  // await ffmpeg(tempLocalFile)
-  //   .screenshots({
-  //     timestamps: ['10%'],
-  //     filename: 'thumbnail.png',
-  //     folder: '/tmp',
-  //   });
-
-  //   new ffmpeg(tempLocalFile)
-  // .takeScreenshots({
-  //     count: 1,
-  //     timemarks: [ '2' ] // number of seconds
-  //   }, '/tmp/'+fileName, function(err) {
-  //   console.log('screenshots were not  saved')
-  // })
-  // Upload the thumbnail to Cloud Storage
   await outputBucket.upload('tn.png', { destination: `thumbnails/${fileName}.png` });
 
 
